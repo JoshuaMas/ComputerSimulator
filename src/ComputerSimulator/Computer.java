@@ -1,8 +1,8 @@
-import jdk.swing.interop.SwingInterOpUtils;
+package ComputerSimulator;
 
 /*
 
--Project: Computer simulator
+-Project: ComputerSimulator.Computer simulator
 
 -Date: 04/12/2020
 

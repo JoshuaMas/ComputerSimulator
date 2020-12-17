@@ -1,8 +1,10 @@
+package ComputerSimulator;
+
 import java.util.ArrayList;
 
 /*
 
--Project: Computer simulator
+-Project: ComputerSimulator.Computer simulator
 
 -Date: 04/12/2020
 

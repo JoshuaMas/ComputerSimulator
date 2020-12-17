@@ -1,6 +1,8 @@
+package ComputerSimulator;
+
 /*
 
--Project: Computer simulator
+-Project: ComputerSimulator.Computer simulator
 
 -Date: 04/12/2020
 
@@ -54,7 +56,7 @@ public class Test {
         c1.getSistemas().uninstallsoftware(p2);
         c1.setRamMemory(c1.getRamMemory() + p2.getSoftwareRamMemoryRequirement());
         c1.setHardDisk(c1.getHardDisk() + p2.getSoftwareSpaceRequirement());
-        System.out.println("Software desinstalado correctamente" + " Actualmente hay un espacio en el disco de: " + c1.getHardDisk() + " y una RAM de " + c1.getRamMemory());
+        System.out.println("ComputerSimulator.Software desinstalado correctamente" + " Actualmente hay un espacio en el disco de: " + c1.getHardDisk() + " y una RAM de " + c1.getRamMemory());
 
         System.out.println("Procedemos a formatear el disco" + " Actualmente hay un espacio en el disco de: " + c1.getHardDisk() + " y una RAM de " + c1.getRamMemory());
         c1.getSistemas().uninstallsoftware(p1);
