@@ -39,10 +39,10 @@ public class Computer {
         }
     }
     // Method: Formateo del disco
-    public void format(){
+   public void format(){
         this.hardDisk = hardDisk + sistemas.getOsSpaceRequirement();
         this.ramMemory = ramMemory + sistemas.getOsRamMemoryRequirement();
-        this.sistemas=null;
+        this.sistemas=sistemas;
 
     }
 

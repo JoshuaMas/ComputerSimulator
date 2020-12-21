@@ -35,65 +35,80 @@ public class Operatingsystem {
     }
 
     // Metodo para instalar software
-    public void installsoftware(Software osSoftware) {
-        this.osSoftwares.add(osSoftware);
+    public void installsoftware(Software osSoftware, Computer c) {
+        if (osSoftware.getSoftwareRamMemoryRequirement() <= c.getRamMemory() && osSoftware.getSoftwareSpaceRequirement() <= c.getHardDisk()) {
+            this.osSoftwares.add(osSoftware);
+            c.setRamMemory(c.getRamMemory() - osSoftware.getSoftwareRamMemoryRequirement());
+            c.setHardDisk(c.getHardDisk() - osSoftware.getSoftwareSpaceRequirement());
+        } else
+            System.out.println("No hay espacio en el disco");
     }
-
-    // Metodo para desinstalar software
-    public void uninstallsoftware(Software osSoftware) {
-        this.osSoftwares.remove(osSoftware);
-
-    }
-
-    // Getters
 
     public String getOsName() {
-        return this.osName;
+        return osName;
     }
-
-    public String getOsVersion() {
-        return this.osVersion;
-    }
-
-    public String getOsArchitecture() {
-        return this.osArchitecture;
-    }
-
-    public boolean getOsOnlyCommand() {
-        return this.osOnlyCommand;
-    }
-
-    public int getOsSpaceRequirement() {
-        return this.osSpaceRequirement;
-    }
-
-    public int getOsRamMemoryRequirement() {
-        return this.osRamMemoryRequirement;
-    }
-    // Setters
 
     public void setOsName(String osName) {
         this.osName = osName;
+    }
+
+    public String getOsVersion() {
+        return osVersion;
     }
 
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
     }
 
+    public String getOsArchitecture() {
+        return osArchitecture;
+    }
+
     public void setOsArchitecture(String osArchitecture) {
         this.osArchitecture = osArchitecture;
+    }
+
+    public boolean isOsOnlyCommand() {
+        return osOnlyCommand;
     }
 
     public void setOsOnlyCommand(boolean osOnlyCommand) {
         this.osOnlyCommand = osOnlyCommand;
     }
 
+    public int getOsSpaceRequirement() {
+        return osSpaceRequirement;
+    }
+
     public void setOsSpaceRequirement(int osSpaceRequirement) {
         this.osSpaceRequirement = osSpaceRequirement;
+    }
+
+    public int getOsRamMemoryRequirement() {
+        return osRamMemoryRequirement;
     }
 
     public void setOsRamMemoryRequirement(int osRamMemoryRequirement) {
         this.osRamMemoryRequirement = osRamMemoryRequirement;
     }
 
+    public ArrayList<Software> getOsSoftwares() {
+        return osSoftwares;
+    }
+
+    public void setOsSoftwares(ArrayList<Software> osSoftwares) {
+        this.osSoftwares = osSoftwares;
+    }
+
+    // Metodo para desinstalar software
+    public void uninstallsoftware(Software osSoftware, Computer c) {
+        if (c.getHardDisk() > osSoftware.getSoftwareSpaceRequirement() && c.getRamMemory() > osSoftware.getSoftwareRamMemoryRequirement()) {
+            c.setHardDisk(c.getHardDisk() + osSoftware.getSoftwareSpaceRequirement());
+            c.setRamMemory(c.getRamMemory() + osSoftware.getSoftwareRamMemoryRequirement());
+            this.osSoftwares.remove(osSoftware);
+        } else {
+            System.out.println("No tienes espacio para instalar el Sistema operaivo.");
+
+        }
+    }
 }
