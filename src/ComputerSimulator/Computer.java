@@ -15,7 +15,7 @@ public class Computer {
     private int hardDisk;
     private Operatingsystem sistemas;
 
-    // Constructor default
+    // Constructor default.
     public Computer() {
     }
 
@@ -26,7 +26,7 @@ public class Computer {
         this.hardDisk = hardDisk;
     }
 
-    // Method: Instala el sistema operativo indicado
+    // Method: Instala el sistema operativo indicado.
     public void installOS(Operatingsystem sistemas) {
         if (hardDisk >= sistemas.getOsSpaceRequirement() && ramMemory >= sistemas.getOsRamMemoryRequirement()) {
                 this.ramMemory = ramMemory - sistemas.getOsRamMemoryRequirement();
@@ -38,7 +38,7 @@ public class Computer {
             System.out.println("No hay espacio suficiente o no hay suficiente RAM");
         }
     }
-    // Method: Formateo del disco
+    // Method: Formateo del disco.
    public void format(){
         this.hardDisk = hardDisk + sistemas.getOsSpaceRequirement();
         this.ramMemory = ramMemory + sistemas.getOsRamMemoryRequirement();
@@ -47,7 +47,7 @@ public class Computer {
     }
 
 
-    // Getters
+    // Getters.
 
     public String getName() {
         return this.name;
@@ -66,7 +66,7 @@ public class Computer {
     }
 
 
-    // Setters
+    // Setters.
 
     public void setName(String name) {
         this.name = name;

@@ -102,7 +102,7 @@ public class Operatingsystem {
         this.osSoftwares = osSoftwares;
     }
 
-    // Metodo para desinstalar software
+    // Metodo para desinstalar software.
     public void uninstallsoftware(Software osSoftware, Computer c) {
         if (c.getHardDisk() > osSoftware.getSoftwareSpaceRequirement() && c.getRamMemory() > osSoftware.getSoftwareRamMemoryRequirement()) {
             c.setHardDisk(c.getHardDisk() + osSoftware.getSoftwareSpaceRequirement());

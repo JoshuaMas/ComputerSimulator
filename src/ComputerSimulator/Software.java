@@ -15,7 +15,7 @@ public class Software {
     private int softwareSpaceRequirement;
     private int softwareRamMemoryRequirement;
 
-    // Constructor default
+    // Constructor default.
     public Software(){
     }
     // Constructor
@@ -25,7 +25,7 @@ public class Software {
         this.softwareSpaceRequirement = softwareSpaceRequirement;
         this.softwareRamMemoryRequirement = softwareRamMemoryRequirement;
     }
-    // Getters
+    //Getters
     public String getSoftwareName(){
         return this.softwareName;
     }
@@ -42,7 +42,7 @@ public class Software {
         return this.softwareRamMemoryRequirement;
     }
 
-    // Setters
+    //Setters
     public void setSoftwareName(String softwareName){
         this.softwareName = softwareName;
     }
