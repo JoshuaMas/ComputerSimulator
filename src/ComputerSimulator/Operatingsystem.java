@@ -36,7 +36,7 @@ public class Operatingsystem {
         this.osRamMemoryRequirement = osRamMemoryRequirement;
     }
 
-    // Metodo para instalar software
+    // Metodo para instalar software.
     public void installsoftware(Software osSoftware, Computer c) {
         if (osSoftware.getSoftwareRamMemoryRequirement() <= c.getRamMemory() && osSoftware.getSoftwareSpaceRequirement() <= c.getHardDisk()) {
             this.osSoftwares.add(osSoftware);

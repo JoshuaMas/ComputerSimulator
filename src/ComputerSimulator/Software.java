@@ -18,7 +18,7 @@ public class Software {
     // Constructor default.
     public Software(){
     }
-    // Constructor
+    // Constructor.
     public Software(String softwareName, String softwareVersion, int softwareSpaceRequirement, int softwareRamMemoryRequirement){
         this.softwareName = softwareName;
         this.softwareVersion = softwareVersion;
