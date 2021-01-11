@@ -42,6 +42,7 @@ public class Operatingsystem {
             this.osSoftwares.add(osSoftware);
             c.setRamMemory(c.getRamMemory() - osSoftware.getSoftwareRamMemoryRequirement());
             c.setHardDisk(c.getHardDisk() - osSoftware.getSoftwareSpaceRequirement());
+            System.out.println("Se ha instalado correctamente.");
         } else
             System.out.println("No hay espacio en el disco");
     }
@@ -104,13 +105,9 @@ public class Operatingsystem {
 
     // Metodo para desinstalar software.
     public void uninstallsoftware(Software osSoftware, Computer c) {
-        if (c.getHardDisk() > osSoftware.getSoftwareSpaceRequirement() && c.getRamMemory() > osSoftware.getSoftwareRamMemoryRequirement()) {
-            c.setHardDisk(c.getHardDisk() + osSoftware.getSoftwareSpaceRequirement());
-            c.setRamMemory(c.getRamMemory() + osSoftware.getSoftwareRamMemoryRequirement());
-            this.osSoftwares.remove(osSoftware);
-        } else {
-            System.out.println("No tienes espacio para instalar el Sistema operaivo.");
-
-        }
+        c.setHardDisk(c.getHardDisk() + osSoftware.getSoftwareSpaceRequirement());
+        c.setRamMemory(c.getRamMemory() + osSoftware.getSoftwareRamMemoryRequirement());
+        this.osSoftwares.remove(osSoftware);
+        System.out.println("se ha desinstalado correctamente");
     }
 }

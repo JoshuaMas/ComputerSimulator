@@ -39,45 +39,44 @@ public class Computer {
         }
     }
     // Method: Formateo del disco.
-   public void format(){
+   public void format(Computer c){
         this.hardDisk = hardDisk + sistemas.getOsSpaceRequirement();
         this.ramMemory = ramMemory + sistemas.getOsRamMemoryRequirement();
-        this.sistemas=sistemas;
+       for (int i = 0; i < getSistemas().getOsSoftwares().size() ; i++) {
+           this.hardDisk += getSistemas().getOsSoftwares().get(i).getSoftwareSpaceRequirement();
+           this.ramMemory += getSistemas().getOsSoftwares().get(i).getSoftwareRamMemoryRequirement();
+       }
+       this.sistemas = null;
+       System.out.println("se ha formateado correctamente");
 
     }
-
-
-    // Getters.
 
     public String getName() {
-        return this.name;
+        return name;
     }
-
-    public int getRamMemory() {
-        return this.ramMemory;
-    }
-
-    public int getHardDisk() {
-        return this.hardDisk;
-    }
-
-    public Operatingsystem getSistemas() {
-        return sistemas;
-    }
-
-
-    // Setters.
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getRamMemory() {
+        return ramMemory;
     }
 
     public void setRamMemory(int ramMemory) {
         this.ramMemory = ramMemory;
     }
 
+    public int getHardDisk() {
+        return hardDisk;
+    }
+
     public void setHardDisk(int hardDisk) {
         this.hardDisk = hardDisk;
+    }
+
+    public Operatingsystem getSistemas() {
+        return sistemas;
     }
 
     public void setSistemas(Operatingsystem sistemas) {
