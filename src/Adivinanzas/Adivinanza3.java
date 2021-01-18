@@ -56,7 +56,6 @@ public class Adivinanza3 {
             int numIntentos = 5;
             int user;
             int numSecreto = (int) (Math.random() * 99 + 1);
-            System.out.println(numSecreto);
             int [] numerosIntroducidosUsuario = new int[5];
             while (numIntentos > 0 && !correcto){
                 System.out.println("Tienes  " + numIntentos + " intentos");
@@ -73,7 +72,7 @@ public class Adivinanza3 {
                 }
             }
             if (correcto) {
-                System.out.println("Enhorabuena! Has acertado!. El numero de intentos ha quedado:"+ numIntentos);
+                System.out.println("Enhorabuena! Has acertado!. Intentos restantes:"+ numIntentos);
                 bote -= 5;
             } else {
                 System.out.println("Lo siento, no has acertado. El número secreto era: " + numSecreto  + "\n" +"Intentos utilizados son: " + numIntentos);
